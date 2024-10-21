@@ -10,7 +10,8 @@ const getTodos = (req, res) => {
 };
 
 const getTodoById = (req, res) => {
-  Todo.findById(req.params.todoID,
+  Todo.findOne(
+    { _id: req.params.todoID },
     (err, Todo) => {
       if (err) {
         res.send(err);
@@ -61,7 +62,6 @@ const deleteTodo = (req, res) => {
 
 module.exports = {
   getTodos,
-  getTodoById,
   createTodo,
   updateTodo,
   deleteTodo,
