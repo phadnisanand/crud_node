@@ -9,6 +9,18 @@ const getTodos = (req, res) => {
   });
 };
 
+const getTodoById = (req, res) => {
+  Todo.findOne(
+    { _id: req.params.todoID },
+    { new: true },
+    (err, Todo) => {
+      if (err) {
+        res.send(err);
+      } else res.json(Todo);
+    }
+  );
+};
+
 const createTodo = (req, res) => {
   const todo = new Todo({
     title: req.body.title,
@@ -51,6 +63,7 @@ const deleteTodo = (req, res) => {
 
 module.exports = {
   getTodos,
+  getTodoById,
   createTodo,
   updateTodo,
   deleteTodo,
