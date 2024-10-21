@@ -10,8 +10,7 @@ const getTodos = (req, res) => {
 };
 
 const getTodoById = (req, res) => {
-  Todo.findOne(
-    { _id: req.params.todoID },
+  Todo.findById(req.params.todoID,
     (err, Todo) => {
       if (err) {
         res.send(err);
