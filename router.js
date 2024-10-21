@@ -1,5 +1,6 @@
 const {
   getTodos,
+  getTodosById,
   createTodo,
   updateTodo,
   deleteTodo,
@@ -12,6 +13,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/todos", getTodos);
+router.get("/todos/:todoID", getTodosById);
 router.post("/todos", createTodo);
 router.put("/todos/:todoID", updateTodo);
 router.delete("/todos/:todoID", deleteTodo);
