@@ -9,8 +9,6 @@ const getTodos = (req, res) => {
   });
 };
 
-
-
 const createTodo = (req, res) => {
   const todo = new Todo({
     title: req.body.title,
