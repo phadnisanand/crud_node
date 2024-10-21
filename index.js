@@ -7,12 +7,12 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 
 const app = express();
 
 mongoose
-  .connect(process.env.MONGODB_URL, {
+  .connect("mongodb+srv://phadnisanandhyd:YDGzMQqnfpuDapms@cluster0.azvp2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
