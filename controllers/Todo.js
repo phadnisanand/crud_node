@@ -9,16 +9,7 @@ const getTodos = (req, res) => {
   });
 };
 
-const getTodoById = (req, res) => {
-  Todo.findOne(
-    { _id: req.params.todoID },
-    (err, Todo) => {
-      if (err) {
-        res.send(err);
-      } else res.json(Todo);
-    }
-  );
-};
+
 
 const createTodo = (req, res) => {
   const todo = new Todo({
