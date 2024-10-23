@@ -22,6 +22,7 @@ const getTodosById = (req, res) => {
 const createTodo = (req, res) => {
   const todo = new Todo({
     title: req.body.title,
+	body: req.body.body,
     description: req.body.description,
     completed: req.body.completed,
   });
@@ -41,6 +42,7 @@ const updateTodo = (req, res) => {
     {
       $set: {
         title: req.body.title,
+		body: req.body.body,
         description: req.body.description,
         completed: req.body.completed,
       },
